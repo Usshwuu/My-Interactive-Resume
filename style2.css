@@ -1,0 +1,150 @@
+body {
+  background-color: aqua;
+  height: 100vh;
+  width: 80vw;
+  margin: 0%;
+  padding: 0%;
+}
+
+.main {
+  background-color: aqua;
+  height: 100vh;
+  width: 80vw;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+  width: 20vw;
+  gap: 170px;
+}
+
+.mid {
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+  width: 20vw;
+  gap: 170px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+  width: 20vw;
+  gap: 170px;
+}
+
+/* Floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0); /* Initial position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Return to initial position */
+  }
+}
+
+.text,
+.text2,
+.text3,
+.text4,
+.text5,
+.text6 {
+  animation: floatAnimation 3s ease-in-out infinite; /* Apply the floating animation */
+  position: absolute;
+  display: flex;
+  z-index: 2; /* Ensure text is in front */
+  font-size: 40px;
+}
+
+.text {
+  margin-left: 150px;
+  margin-top: 110px;
+}
+
+.text2 {
+  margin-left: 170px;
+  margin-top: 110px;
+}
+
+.text3 {
+  margin-left: 1210px;
+  margin-top: 110px;
+}
+
+.text4 {
+  margin-left: 1210px;
+  margin-top: 110px;
+}
+
+.text5 {
+  margin-left: 130px;
+  margin-top: 110px;
+}
+
+.text6 {
+  margin-left: 1210px;
+  margin-top: 110px;
+}
+
+#player {
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Center the player horizontally */
+  width: 50px;
+  height: 80px;
+  background-image: url("assets/playerUp.png"); /* Default image for moving up */
+  background-size: cover;
+  transform: translateX(-50%); /* Center horizontally */
+  transition: bottom 0.2s ease-in-out; /* Smooth vertical movement */
+}
+
+.cloud {
+  position: absolute;
+  display: flex;
+  height: 80vh;
+  width: 70vw;
+}
+.clou {
+  position: absolute;
+  display: flex;
+  height: 50vh;
+  width: 90vw;
+  margin-top: 200px;
+}
+.clo {
+  position: absolute;
+  display: flex;
+  height: 60vh;
+  width: 70vw;
+  margin-bottom: 100px;
+  margin-left: 430px;
+  margin-top: 300px;
+}
+.cl {
+  position: absolute;
+  display: flex;
+  height: 80vh;
+  width: 70vw;
+  margin-left: 430px;
+  margin-bottom: 500px;
+}
+
+#tox {
+  animation: floatAnimation 3s ease-in-out infinite; /* Apply the floating animation */
+  z-index: 1; /* Make sure boxes are behind text */
+}
+
+.skills {
+  position: absolute;
+  display: flex;
+  margin-left: 500px;
+  animation: floatAnimation 1s ease-in-out infinite;
+  font-weight: bold;
+  font-size: 40px;
+}

@@ -1,0 +1,199 @@
+body {
+  background-color: aqua;
+  height: 80vh;
+  width: 98vw;
+  margin: 0%;
+}
+
+.main {
+  background-color: aqua;
+  height: 80vh;
+  width: 95vw;
+}
+
+.header {
+  display: flex;
+  height: 10vh;
+  margin-top: 100px;
+  margin-right: 50px;
+}
+
+.mid {
+  display: flex;
+  height: 10vh;
+  margin-top: 130px;
+  margin-left: 285px;
+}
+
+.footer {
+  display: flex;
+  height: 10vh;
+  margin-top: 150px;
+  position: relative; /* Position relative for proper child positioning */
+}
+
+.pole {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 15vh;
+  width: auto;
+  transform: translateY(-95%);
+  margin-right: 130px;
+  margin-top: 30px;
+}
+
+/* Player character CSS */
+.player {
+  position: absolute;
+  width: 50px; /* Character's width */
+  height: 80px; /* Character's height */
+  background-image: url("assets/playerDown.png"); /* Character sprite facing down */
+  background-size: cover;
+  transition: left 0.1s, top 0.1s;
+  top: 50%; /* Initially position the player in the middle */
+  left: 10%; /* Initially position the player horizontally on the left */
+}
+
+.pst {
+  display: flex;
+  height: 10vh;
+}
+
+#boxsContainer {
+  position: relative;
+}
+
+/* Define the floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Moves up */
+  }
+  100% {
+    transform: translateY(0); /* Moves back to the original position */
+  }
+}
+
+#boxsText,
+#boxsTextMid1,
+#boxsTextMid2,
+.flagText {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.755); /* Optional for better visibility */
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  display: none; /* Initially hide the text */
+  animation: floatAnimation 2s ease-in-out infinite; /* Apply the floating animation */
+  border-radius: 20%;
+}
+
+#boxsText {
+  top: 140%; /* Center the text vertically */
+  left: 50%; /* Center the text horizontally */
+}
+
+#boxsTextMid1 {
+  top: 55%; /* Center the text vertically */
+  left: 25%; /* Center the text horizontally */
+}
+
+#boxsTextMid2 {
+  top: 55%; /* Center the text vertically */
+  left: 65%; /* Center the text horizontally */
+}
+
+.flagText {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.725); /* Optional for better visibility */
+  text-align: center;
+  top: -60%; /* Center the text vertically */
+  left: 92%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bg {
+  position: absolute;
+  display: flex;
+}
+
+/* Lava container for falling lava drops */
+.lava-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  pointer-events: none; /* Ensures it doesn't interfere with content */
+  z-index: -2; /* Behind all content */
+}
+
+/* Lava drop styling */
+.lava-drop {
+  position: absolute;
+  top: -50px; /* Start above the screen */
+  width: 10px; /* Width of each lava drop */
+  height: 20px; /* Height of the lava drop */
+  background-color: orange; /* Lava color */
+  border-radius: 50%; /* Makes the drop round */
+  opacity: 0.9;
+  animation: lavaFall 2s linear infinite, lavaGlow 1s alternate infinite;
+}
+
+/* Keyframes for falling lava */
+@keyframes lavaFall {
+  0% {
+    top: -50px; /* Start above the screen */
+    left: random(0, 100%);
+  }
+  100% {
+    top: 97vh; /* Move to the bottom */
+  }
+}
+
+/* Lava glow effect */
+@keyframes lavaGlow {
+  0% {
+    background-color: orange;
+  }
+  50% {
+    background-color: red; /* Lava glow effect */
+  }
+  100% {
+    background-color: orange;
+  }
+}
+
+/* Optional: Add more lava drops with different starting positions and delays */
+.lava-drop:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.lava-drop:nth-child(2) {
+  left: 25%;
+  animation-delay: 1.5s;
+}
+
+.lava-drop:nth-child(3) {
+  left: 45%;
+  animation-delay: 1s;
+}
+
+.lava-drop:nth-child(4) {
+  left: 65%;
+  animation-delay: 1.5s;
+}
+
+.lava-drop:nth-child(5) {
+  left: 85%;
+  animation-delay: 1s;
+}

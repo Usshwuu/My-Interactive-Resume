@@ -1,0 +1,242 @@
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #14e2e2;
+  overflow: hidden;
+}
+
+.port {
+  display: flex;
+  position: absolute;
+  height: 20vh;
+  margin-left: 1400px;
+  transform: rotate(180deg);
+}
+
+/* Fish styling */
+.fish {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: #ff6347;
+  border-radius: 50%;
+  animation: swim 10s infinite linear;
+  transform-origin: center;
+}
+
+.fish::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 20px;
+  height: 10px;
+  background-color: #ff6347;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Fish label styling */
+.fish-label {
+  position: absolute;
+  top: -15px; /* Position label above the fish */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/* Fish swimming animation */
+@keyframes swim {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(200px) translateY(-100px);
+  }
+  50% {
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateX(-200px) translateY(100px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Fish stopped state (no animation and centered in the middle) */
+.fish.stopped {
+  animation: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Fish positioning (before interaction) - Near center */
+.fish:nth-child(3) {
+  left: 60%; /* Adjusted to be closer to the center */
+  top: 30%; /* Adjusted to be near the center vertically */
+}
+.fish:nth-child(4) {
+  left: 50%; /* Adjusted to be closer to the center */
+  top: 70%; /* Adjusted to be near the center vertically */
+}
+.fish:nth-child(5) {
+  left: 50%; /* Adjusted to be closer to the center */
+  top: 50%; /* Adjusted to be near the center vertically */
+}
+
+/* Fish info styling */
+.fish-info {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Player character styling */
+.player {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  transition: left 0.1s, top 0.1s;
+}
+
+/* Cloud Styling */
+.cloud {
+  position: absolute;
+  background: url("assets/cloud.png") no-repeat center center;
+  background-size: contain;
+  height: 100px;
+  width: 300px;
+}
+
+/* Cloud 1 */
+.cloud1 {
+  top: 10%;
+  left: -300px;
+  animation: moveCloud1 10s linear infinite;
+}
+
+/* Cloud 2 */
+.cloud2 {
+  top: 15%;
+  left: -400px;
+  animation: moveCloud2 15s linear infinite;
+}
+
+/* Cloud 3 */
+.cloud3 {
+  top: 20%;
+  left: -500px;
+  animation: moveCloud3 10s linear infinite;
+}
+
+/* Cloud 4 */
+.cloud4 {
+  top: 25%;
+  left: -600px;
+  animation: moveCloud4 15s linear infinite;
+}
+
+/* Cloud 5 */
+.cloud5 {
+  top: 40%;
+  left: -700px;
+  animation: moveCloud5 20s linear infinite;
+}
+
+/* Cloud 6 */
+.cloud6 {
+  top: 50%;
+  left: -800px;
+  animation: moveCloud6 20s linear infinite;
+}
+
+/* Cloud 7 */
+.cloud7 {
+  top: 60%;
+  left: -900px;
+  animation: moveCloud7 25s linear infinite;
+}
+
+/* Cloud movement animations with different speeds */
+@keyframes moveCloud1 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud2 {
+  0% {
+    left: -400px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud3 {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud4 {
+  0% {
+    left: -600px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud5 {
+  0% {
+    left: -700px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud6 {
+  0% {
+    left: -800px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes moveCloud7 {
+  0% {
+    left: -900px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
